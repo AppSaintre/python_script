@@ -5,10 +5,10 @@ import sys
 
 serviceUrl = 'http://auctions.search.yahoo.co.jp/search?'
 
-if sys.argv[0] == '':
+if sys.argv[1] == '':
 	print('auction.py <key words> <number of page>')
 	sys.exit(-1)
-if sys.argv[1] == '':
+if sys.argv[2] == '':
 	print('auction.py <key words> <number of page>')
 	sys.exit(-1)
 
