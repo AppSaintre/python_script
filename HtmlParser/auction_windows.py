@@ -1,17 +1,27 @@
-﻿import urllib.request as req
+import urllib.request as req
 import urllib.parse as par
 from bs4 import BeautifulSoup as bsoup
 import sys
 
 serviceUrl = 'http://auctions.search.yahoo.co.jp/search?'
-keyword = input('Input Keywords(Devided by a Space):')
-page = input('Which Page of the Result Do You Want:')
+
+if sys.argv[0] == '':
+	print('auction.py <key words> <number of page>')
+	sys.exit(-1)
+if sys.argv[1] == '':
+	print('auction.py <key words> <number of page>')
+	sys.exit(-1)
+
+keyword = sys.argv[1]
+page = sys.argv[2]
+#keyword = input('Input Keywords(Devided by a Space):')
+#page = input('Which Page of the Result Do You Want:')
 page = str((int(page)-1)*20 + 1)
 pairs = {'p':keyword,'b':page}
 url = serviceUrl + par.urlencode(pairs)
 #print(url)
 html = req.urlopen(url)
-print(html)
+#print(html)
 #sys.exit()
 start = 0
 data = ''
@@ -41,6 +51,3 @@ for tag in aTags:
 				print('A Satisfying Res:',resUrl)
 				break
 	dedup = dedup + 1
-	
-
-  
