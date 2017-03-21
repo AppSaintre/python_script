@@ -1,0 +1,11 @@
+{
+Pseu-hibernation error in mounting windows partitions with a dual boot system
+[Description]Error mounting /dev/sda6 at /media/ububtu/Media ...
+             Failed to mount '/dev/sda6': Operation not permitted
+             The NTFS partition is in an unsafe state. Please resume and shutdown
+             Windows fully (no hibernation or fast restarting), or mount the volume
+             read-only with the 'ro' mount option
+[Resolution] $ sudo ntfsfix /dev/sdXY
+             $ sudo mount -o rw /dev/sdXY
+}
+
