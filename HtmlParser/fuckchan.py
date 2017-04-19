@@ -1,3 +1,8 @@
+#Download all your essays in renren
+#Step:
+#1. Log in within browser which eliminates bar code authentication
+#2. Run this script, but first modify it by replacing <Your Email> and <Your Password> with your id and psw
+#   such as 12345@fuckchan.com and 12345fuckchanecho
 import requests
 import sys,os
 import codecs
